@@ -4,9 +4,10 @@ import com.example.spock.core.daos.ProductDao;
 import com.example.spock.core.models.ProductModel;
 import com.example.spock.core.services.ProductService;
 import org.springframework.stereotype.Service;
+import sun.plugin.dom.exception.InvalidStateException;
 
 import javax.annotation.Resource;
-import java.util.Set;
+import java.util.List;
 
 @Service
 public class DefaultProductService implements ProductService
@@ -21,7 +22,7 @@ public class DefaultProductService implements ProductService
     }
 
     @Override
-    public Set<ProductModel> findAllProducts()
+    public List<ProductModel> getAllProducts()
     {
         return productDao.findAll();
     }
@@ -29,6 +30,13 @@ public class DefaultProductService implements ProductService
     @Override
     public ProductModel saveProduct(final ProductModel product)
     {
-        return productDao.save(product);
+        try
+        {
+            return productDao.save(product);
+        }
+        catch (InvalidStateException e)
+        {
+            return null;
+        }
     }
 }
