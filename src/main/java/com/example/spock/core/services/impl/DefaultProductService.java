@@ -3,10 +3,12 @@ package com.example.spock.core.services.impl;
 import com.example.spock.core.daos.ProductDao;
 import com.example.spock.core.models.ProductModel;
 import com.example.spock.core.services.ProductService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Set;
 
+@Service
 public class DefaultProductService implements ProductService
 {
     @Resource
