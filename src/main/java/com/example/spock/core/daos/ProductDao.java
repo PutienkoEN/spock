@@ -10,6 +10,11 @@ public interface ProductDao
 
     List<ProductModel> findAll();
 
+    /**
+     * Saves product.
+     *
+     * @param product product to save
+     * @throws IllegalArgumentException if passed value is null
+     */
     void save(ProductModel product);
-
 }
