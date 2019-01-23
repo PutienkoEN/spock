@@ -4,7 +4,6 @@ import com.example.spock.core.daos.ProductDao;
 import com.example.spock.core.models.ProductModel;
 import com.example.spock.core.services.ProductService;
 import org.springframework.stereotype.Service;
-import sun.plugin.dom.exception.InvalidStateException;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -28,15 +27,8 @@ public class DefaultProductService implements ProductService
     }
 
     @Override
-    public ProductModel saveProduct(final ProductModel product)
+    public void saveProduct(final ProductModel product)
     {
-        try
-        {
-            return productDao.save(product);
-        }
-        catch (InvalidStateException e)
-        {
-            return null;
-        }
+        productDao.save(product);
     }
 }

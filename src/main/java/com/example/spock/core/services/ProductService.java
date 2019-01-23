@@ -10,5 +10,5 @@ public interface ProductService
 
     List<ProductModel> getAllProducts();
 
-    ProductModel saveProduct(ProductModel product);
+    void saveProduct(ProductModel product);
 }

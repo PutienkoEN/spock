@@ -10,11 +10,6 @@ public interface ProductDao
 
     List<ProductModel> findAll();
 
-    /**
-     * @param product
-     * @return
-     * @throws sun.plugin.dom.exception.InvalidStateException in case product was null
-     */
-    ProductModel save(ProductModel product);
+    void save(ProductModel product);
 
 }
