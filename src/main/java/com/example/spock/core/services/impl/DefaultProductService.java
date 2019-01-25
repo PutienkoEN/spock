@@ -5,6 +5,7 @@ import com.example.spock.core.models.ProductModel;
 import com.example.spock.core.services.ProductService;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Set;
 
 public class DefaultProductService implements ProductService
@@ -19,7 +20,7 @@ public class DefaultProductService implements ProductService
     }
 
     @Override
-    public Set<ProductModel> findAllProducts()
+    public List<ProductModel> getAllProducts()
     {
         return productDao.findAll();
     }
