@@ -50,13 +50,4 @@ class DefaultProductServiceSpec extends Specification {
             productService.getAllProducts() == [firstProduct, secondProduct] as List
     }
 
-    @Test
-    def "should return null when dao thrown IllegalStateException"() {
-        given:
-            def product = Mock(ProductModel)
-            productDao.save(_) >> { throw new InvalidStateException("") }
-        expect:
-            productService.saveProduct(product) == null
-    }
-
 }

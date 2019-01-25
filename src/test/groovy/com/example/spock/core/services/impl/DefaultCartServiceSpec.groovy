@@ -62,7 +62,7 @@ class DefaultCartServiceSpec extends Specification {
             thrown(InvalidStateException)
         where:
             firstProductPrice | secondProductPrice
-            null               | 200
+            null              | 200
             200               | null
             null              | null
     }
